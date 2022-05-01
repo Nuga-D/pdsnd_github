@@ -39,16 +39,7 @@ def get_filters():
     MONTH_DATA = {'january': 1, 'february': 2, 'march': 3,
                   'april': 4, 'may': 5, 'june': 6, 'all': 7}
     month = ''
-    while month not in MONTH_DATA.keys():
-        print("\nMONTH: Please enter the month of interest, between January to June, to get corresponding data insight:")
-        print("Your input could be like this: january or JANUARY, february or FEBRUARY, ...")
-        print("However, If you choose to get insight for all months, type 'all' as your input)")
-        month = input().lower()
-
-        if month not in MONTH_DATA.keys():
-            print("\nInvalid input !!! Try again following the instructions of the \'month' format to be used.")
-#             print("\nRestarting...")
-            time.sleep(2.0)
+    month = new_func(MONTH_DATA, month)
             
     print("\nYou chose {} as your month of interest".format(month.title()))
 
@@ -73,6 +64,19 @@ def get_filters():
 
     print('-'*40)
     return city, month, day
+
+def new_func(MONTH_DATA, month):
+    while month not in MONTH_DATA.keys():
+        print("\nMONTH: Please enter the month of interest, between January to June, to get corresponding data insight:")
+        print("Your input could be like this: january or JANUARY, february or FEBRUARY, ...")
+        print("However, If you choose to get insight for all months, type 'all' as your input)")
+        month = input().lower()
+
+        if month not in MONTH_DATA.keys():
+            print("\nInvalid input !!! Try again following the instructions of the \'month' format to be used.")
+#             print("\nRestarting...")
+            time.sleep(2.0)
+    return month
 
 
 def load_data(city, month, day):
