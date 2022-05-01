@@ -54,8 +54,8 @@ def get_filters():
 
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     # A list that contains individual days including the 'all' option
-    DAY_LIST = ['all', 'monday', 'tuesday', 'wednesday',
-                'thursday', 'friday', 'saturday', 'sunday']
+    DAY_LIST = ['all', 'Monday', 'Tuesday', 'Wednesday',
+                'Thursday', 'Friday', 'Saturday', 'Sunday']
     day = ''
     while day not in DAY_LIST:
         print("\n DAY: Please enter a day of interest to get corresponding data insight:")
