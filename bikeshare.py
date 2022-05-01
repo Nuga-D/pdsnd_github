@@ -48,6 +48,15 @@ def get_filters():
     DAY_LIST = ['all', 'Monday', 'Tuesday', 'Wednesday',
                 'Thursday', 'Friday', 'Saturday', 'Sunday']
     day = ''
+    day = new_func1(DAY_LIST, day)
+            
+    print("\nYou have chosen {} as yout day of interest".format(day.title()))
+    print("\nYou will provided with the data for city: {}, month: {} and day: {} for your perusal".format(city.upper(), month.upper(), day.upper()))
+
+    print('-'*40)
+    return city, month, day
+
+def new_func1(DAY_LIST, day):
     while day not in DAY_LIST:
         print("\n DAY: Please enter a day of interest to get corresponding data insight:")
         print("Your input could be like this: monday or MONDAY, tuesday or TUESDAY, ...).")
@@ -58,12 +67,7 @@ def get_filters():
             print("\nInvalid input !!! Try again following the instructions of the \'day\' format to be used.")
 #             print("\nRestarting...")
             time.sleep(2.0)
-            
-    print("\nYou have chosen {} as yout day of interest".format(day.title()))
-    print("\nYou will provided with the data for city: {}, month: {} and day: {} for your perusal".format(city.upper(), month.upper(), day.upper()))
-
-    print('-'*40)
-    return city, month, day
+    return day
 
 def new_func(MONTH_DATA, month):
     while month not in MONTH_DATA.keys():
